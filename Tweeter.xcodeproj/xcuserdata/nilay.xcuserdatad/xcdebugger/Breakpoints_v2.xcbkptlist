@@ -14,8 +14,8 @@
             filePath = "Tweeter/Views/TweetTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
+            startingLineNumber = "132"
+            endingLineNumber = "132"
             landmarkName = "configureConstraints()"
             landmarkType = "7">
             <Locations>
@@ -93,6 +93,21 @@
                   startingLineNumber = "62"
                   endingLineNumber = "62"
                   offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "F74D6D3A-0323-4C3D-9DD9-529ED4383534 - 60629470d8e1e96c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Tweeter.TweetTableViewCell.configureConstraints() -&gt; ()"
+                  moduleName = "Tweeter"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/nilay/Desktop/Tweeter/Tweeter/Views/TweetTableViewCell.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "64">
                </Location>
             </Locations>
          </BreakpointContent>

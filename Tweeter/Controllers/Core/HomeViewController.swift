@@ -9,6 +9,25 @@ import UIKit
 
 class HomeViewController: UIViewController {
 
+    private func ConfigtureNavigationBar() {
+       let size: CGFloat = 36
+       let TwitterLogoimageView = UIImageView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        TwitterLogoimageView.contentMode = .scaleAspectFill
+        TwitterLogoimageView.image = UIImage(named: "Twitterlogo")
+        
+        let middleView = UIView(frame: CGRect(x: 0, y: 0, width: size, height: size))
+        middleView.addSubview(TwitterLogoimageView)
+        navigationItem.titleView = middleView
+        
+        let ProfileImage = UIImage(systemName: "person")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: ProfileImage, style: .plain, target: self, action: #selector(didTapProfile))
+    }
+    
+    @objc private func didTapProfile() {
+        let vc = ProfileViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
     private let timeLineTabView: UITableView = {
         let tabView = UITableView()
         tabView.register(TweetTableViewCell.self, forCellReuseIdentifier: TweetTableViewCell.identifier)
@@ -20,6 +39,7 @@ class HomeViewController: UIViewController {
         view.addSubview(timeLineTabView)
         timeLineTabView.delegate = self
         timeLineTabView.dataSource = self
+        ConfigtureNavigationBar()
     }
 
     override func viewDidLayoutSubviews() {
@@ -38,10 +58,26 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
              return UITableViewCell()
         }
         
+        cell.delgate = self
         return cell
     }
+}
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 120
+extension HomeViewController: TweetTableViewCellDelegate {
+    
+    func TweetTableViewCellDidReply() {
+        print("Hello, Reply")
+    }
+    
+    func TweetTableViewCellDidLike() {
+        print("Hello,Like")
+    }
+    
+    func TweetTableViewCellDidShare() {
+        print("Hello, Share")
+    }
+    
+    func TweetTableViewCellDidReTweet() {
+        print("Hello, ReTweet")
     }
 }
