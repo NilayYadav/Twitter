@@ -46,8 +46,14 @@ class HomeViewController: UIViewController {
         super.viewDidLayoutSubviews()
         timeLineTabView.frame = view.frame
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = false
+    }
 }
 
+  
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10

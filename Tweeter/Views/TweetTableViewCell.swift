@@ -172,8 +172,7 @@ class TweetTableViewCell: UITableViewCell {
         let ShareButtonConstraints = [
             ShareButton.leadingAnchor.constraint(equalTo: LikeButton.trailingAnchor, constant: activespacing),
             ShareButton.centerYAnchor.constraint(equalTo: ReplyButton.centerYAnchor)
-        
-         ]
+        ]
         
         NSLayoutConstraint.activate(ProfileImageConstraints)
         NSLayoutConstraint.activate(DisplayNameLabelConstraints)
